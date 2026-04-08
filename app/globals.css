@@ -1,0 +1,185 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@layer components {
+  .cal-container {
+    @apply relative w-[90vw] max-w-[432px] mx-auto bg-white relative z-10;
+    border-radius: 16px;
+    box-shadow:
+      0 10px 30px rgba(0, 0, 0, 0.1),
+      0 2px 6px rgba(0, 0, 0, 0.05);
+    transition: box-shadow 0.3s ease;
+  }
+  
+  .cal-container:hover {
+    box-shadow:
+      0 15px 40px rgba(0, 0, 0, 0.15),
+      0 4px 10px rgba(0, 0, 0, 0.08);
+  }
+  
+  .cal-hero {
+    @apply relative w-full h-[200px] sm:h-[270px] bg-white overflow-hidden shadow-inner;
+  }
+  
+  .hero-overlay {
+    background: linear-gradient(
+      to bottom,
+      rgba(0, 0, 0, 0.1),
+      rgba(0, 0, 0, 0.35)
+    );
+  }
+  
+  .cal-main {
+    @apply flex flex-col sm:flex-row p-4 sm:p-7 pt-2 sm:pt-3.5 gap-4 sm:gap-7 bg-white relative z-10;
+  }
+  .cal-notes {
+    @apply w-full sm:w-[35%] pt-1 order-2 sm:order-1;
+  }
+  .cal-grid-wrap {
+    @apply w-full sm:w-[65%] order-1 sm:order-2;
+  }
+  .calendar-container {
+    min-height: 320px; /* Adjust based on your calendar grid height */
+    position: relative;
+    overflow: hidden;
+  }
+  .cal-weekday {
+    @apply text-[10px] font-medium text-gray-500 pb-3 tracking-wider;
+  }
+  .cal-weekend {
+    @apply text-primary;
+  }
+  .cal-day {
+    @apply p-2.5 text-xs font-normal rounded-md cursor-pointer transition-all duration-200 w-10 h-10 flex items-center justify-center;
+  }
+  .date-cell {
+    transition: all 0.2s ease;
+  }
+  
+  .date-cell:hover {
+    transform: scale(1.05);
+    box-shadow: 0px 6px 14px rgba(0,0,0,0.12);
+  }
+  
+  .date-cell:active {
+    transform: scale(0.97);
+  }
+  .range-start {
+    @apply relative z-10 text-white font-bold !important;
+    background: theme('colors.primary') !important;
+    border-radius: 50% !important;
+    box-shadow: 0 4px 12px rgba(37, 99, 235, 0.4);
+    animation: selection-pulse 0.4s cubic-bezier(0.175, 0.885, 0.32, 1.275);
+  }
+  
+  .range-start.has-range::after {
+    content: "";
+    @apply absolute top-0 left-1/2 right-[-4px] bottom-0 -z-10;
+    background: rgba(37, 99, 235, 0.12); /* Soft primary tint */
+  }
+  
+  .range-end {
+    @apply relative z-10 text-white font-bold !important;
+    background: theme('colors.primary') !important;
+    border-radius: 50% !important;
+    box-shadow: 0 4px 12px rgba(37, 99, 235, 0.4);
+    animation: selection-pulse 0.4s cubic-bezier(0.175, 0.885, 0.32, 1.275);
+  }
+  
+  .range-end.has-range::after {
+    content: "";
+    @apply absolute top-0 right-1/2 left-[-4px] bottom-0 -z-10;
+    background: rgba(37, 99, 235, 0.12);
+  }
+  
+  .range-middle {
+    @apply relative text-primary font-semibold !important;
+    background: rgba(37, 99, 235, 0.12) !important;
+    border-radius: 0 !important;
+    /* Connect the grid gaps */
+    margin-left: -2.5px;
+    margin-right: -2.5px;
+    width: calc(100% + 5px);
+  }
+
+  @keyframes selection-pulse {
+    0% { transform: scale(1); }
+    50% { transform: scale(1.15); }
+    100% { transform: scale(1); }
+  }
+  .cal-day-muted {
+    @apply text-gray-200 font-normal;
+  }
+  .today {
+    border: 2px solid theme('colors.primary');
+  }
+  .disabled {
+    opacity: 0.4;
+    pointer-events: none;
+  }
+}
+
+/* Reset + Base */
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  transition: background 0.25s ease, color 0.25s ease, transform 0.2s ease;
+}
+
+/* Smooth font + modern feel */
+body {
+  font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Oxygen,
+    Ubuntu, Cantarell, "Open Sans", "Helvetica Neue", sans-serif;
+
+  background: linear-gradient(135deg, #4f6f52, #3f5f45);
+  color: #1a1a1a;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  min-height: 100vh;
+  padding: 4vh 1; /* Increased padding for top and bottom gap */
+  overflow: hidden;
+
+  line-height: 1.5;
+  -webkit-font-smoothing: antialiased;
+}
+
+/* Better buttons */
+button {
+  cursor: pointer;
+  border: none;
+  background: none;
+  font-size: 16px;
+}
+
+/* Headings */
+h1, h2, h3 {
+  font-weight: 600;
+}
+
+textarea::placeholder {
+  color: #9ca3af;
+  font-style: italic;
+}
+::-webkit-scrollbar {
+  width: 6px;
+}
+
+::-webkit-scrollbar-thumb {
+  background: #ccc;
+  border-radius: 10px;
+}
+
+.nav-btn {
+  transition: all 0.2s ease;
+}
+
+.nav-btn:hover {
+  transform: translateY(-2px);
+}
+
+.nav-btn:active {
+  transform: scale(0.96);
+}
