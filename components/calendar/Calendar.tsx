@@ -32,7 +32,7 @@ export default function Calendar() {
             alt="Calendar background"
             layout="fill"
             objectFit="cover"
-            objectPosition="center 75%"
+            objectPosition="center 73%"
             priority
           />
 
@@ -41,7 +41,7 @@ export default function Calendar() {
 
           {/* Wavy separator - Full width responsive SVG */}
           <svg 
-            className="absolute bottom-[-1px] left-0 w-full h-[100px] z-10 pointer-events-none"
+            className="absolute bottom-[-2px] left-0 w-full h-[100px] z-10 pointer-events-none translate-y-[5px]"
             viewBox="0 0 1000 100"
             preserveAspectRatio="none"
           >

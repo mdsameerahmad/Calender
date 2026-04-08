@@ -29,8 +29,8 @@ export default function CalendarHeader({ currentDate, changeMonth, isAnimating }
           </svg>
         </button>
       </div>
-      <div className="text-[16px] sm:text-[20px] font-bold mb-[-4px] tracking-wide relative z-10 text-white opacity-80">{year}</div>
-      <div className="text-[28px] sm:text-[32px] font-extrabold tracking-wider text-white">{month}</div>
+      <div className="text-[14px] sm:text-[20px] font-bold mb-[-4px] tracking-wide relative z-10 text-white opacity-80">{year}</div>
+      <div className="text-[24px] sm:text-[32px] font-extrabold tracking-wider text-white">{month}</div>
     </div>
   );
 }

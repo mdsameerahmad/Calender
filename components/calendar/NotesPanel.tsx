@@ -42,14 +42,16 @@ export default function NotesPanel({ range, currentDate }: any) {
         )}
       </h3>
       <textarea
-        className="w-full bg-transparent border-none outline-none text-xs leading-[22px] text-gray-600 resize-none h-[180px] font-medium placeholder:text-gray-300 p-2"
+        className="w-full bg-transparent border-none outline-none text-xs leading-[24px] text-gray-600 resize-none h-[120px] sm:h-[180px] font-medium placeholder:text-gray-300 p-0"
         placeholder="Type your notes here..."
         value={note}
         onChange={(e) => saveNote(e.target.value)}
         style={{
-          backgroundImage: 'linear-gradient(transparent 21px, rgba(229, 231, 235, 0.5) 21px)',
-          backgroundSize: '100% 22px',
-          backgroundAttachment: 'local'
+          backgroundImage: 'linear-gradient(transparent 23px, rgba(229, 231, 235, 0.5) 23px)',
+          backgroundSize: '100% 24px',
+          backgroundAttachment: 'local',
+          paddingTop: '0px',
+          paddingBottom: '0px',
         }}
       />
     </div>

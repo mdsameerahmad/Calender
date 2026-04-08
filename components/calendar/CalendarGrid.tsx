@@ -11,7 +11,7 @@ export default function CalendarGrid({
   const weekdays = ["MON", "TUE", "WED", "THU", "FRI", "SAT", "SUN"];
 
   return (
-    <div className="grid grid-cols-7 gap-x-1 gap-y-1 text-center">
+    <div className="grid grid-cols-7 gap-x-1 sm:gap-x-2 gap-y-1 sm:gap-y-2 text-center pb-4 sm:pb-0">
       {/* WEEKDAY HEADER */}
       {weekdays.map((day, index) => (
         <div key={day} className={`cal-weekday ${index >= 5 ? 'cal-weekend' : ''}`}>
